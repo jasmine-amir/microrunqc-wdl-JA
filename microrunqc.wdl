@@ -23,7 +23,7 @@ workflow microrunqc {
         call bwa.Mem {
             input:read1=trim.forward_t, 
                   read2=trim.reverse_t, 
-                  bwaIndex=bwaIndex.index,
+                  bwa.Index=bwaIndex.index,
                   outputPrefix=identify.name,
                   threads=max_threads}
     }
