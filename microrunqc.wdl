@@ -19,11 +19,11 @@ workflow microrunqc {
         call identify { input:forward=read_pair.left }
         call trim { input:forward=read_pair.left, reverse=read_pair.right }
         call assemble { input:forward=trim.forward_t, reverse=trim.reverse_t }
-        call bwaIndex { input:fasta=assemble.assembly, dockerImage=bwa_container }
+        call bwa.bwaIndex { input:fasta=assemble.assembly, dockerImage=bwa_container }
         call bwa.Mem {
             input:read1=trim.forward_t, 
                   read2=trim.reverse_t, 
-                  BwaIndex=bwa.bwaIndex.index,
+                  BwaIndex=bwaIndex.index,
                   outputPrefix=identify.name,
                   threads=max_threads}
     }
