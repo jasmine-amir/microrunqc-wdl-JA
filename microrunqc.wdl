@@ -11,7 +11,8 @@ workflow microrunqc {
     input {
         Array[Pair[File, File]] paired_reads
         Int max_threads = 8
-        String bwa_container = "https://raw.githubusercontent.com/StaPH-B/docker-builds/master/bwa/0.7.17/Dockerfile"
+        # Contains bwa 0.7.17 bwakit 0.7.17.dev1 and samtools 1.10.
+        String dockerImage = "quay.io/biocontainers/mulled-v2-ad317f19f5881324e963f6a6d464d696a2825ab6:c59b7a73c87a9fe81737d5d628e10a3b5807f453-0"
     }
 
     scatter (read_pair in paired_reads) {
