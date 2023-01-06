@@ -61,7 +61,7 @@ task identify {
     }
 
     runtime {
-        container: "ubuntu:xenial"
+        docker: "ubuntu:xenial"
         cpu: 1
         memory: "1024 MB"
     }
@@ -117,7 +117,7 @@ task assemble {
     }
 
     runtime {
-        container: "staphb/skesa:2.4.0"
+        docker: "staphb/skesa:2.4.0"
         cpu: 8
         memory: "4096 MB"
     }
@@ -141,7 +141,7 @@ task profile {
     }
 
     runtime {
-        container: "staphb/mlst:2.23.0"
+        docker: "staphb/mlst:2.23.0"
         cpu: 8
         memory: "4096 MB"
     }
