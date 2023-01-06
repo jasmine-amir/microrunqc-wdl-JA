@@ -89,7 +89,7 @@ task trim {
     }
 
     runtime {
-        container: "staphb/trimmomatic:0.39"
+        docker: "staphb/trimmomatic:0.39"
         cpu: 2
         memory: "1024 MB"
     }
