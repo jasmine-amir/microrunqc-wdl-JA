@@ -117,7 +117,7 @@ task assemble {
     }
 
     runtime {
-        docker: "staphb/skesa:2.4.0"
+        docker: "ncbi/skesa:v2.3.0"
         cpu: 8
         memory: "4096 MB"
     }
