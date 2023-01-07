@@ -134,7 +134,7 @@ task profile {
         Array[File] assemblies
     }
 
-    command <<< mlst ~{assemblies} >>>
+    command <<< mlst ~{sep = "/n" assemblies} >>>
 
     output {
         File report = stdout()
