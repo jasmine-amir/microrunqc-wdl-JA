@@ -134,7 +134,7 @@ task profile {
         Array[File] assemblies
     }
 
-    command <<< mlst ARRAY=~{sep=" " assemblies} >>>
+    command <<< mlst ~{sep=" " assemblies} >>>
 
     output {
         File report = stdout()
